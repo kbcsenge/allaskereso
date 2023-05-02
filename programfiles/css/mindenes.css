@@ -1,0 +1,24 @@
+button{
+    background: #6279c9;
+}
+a{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+input[type=submit]{
+    color: white;
+    text-decoration: none;
+    background: #6279c9;
+}
+.layout-container {
+    display: flex;
+}
+main {
+    flex: 85;
+}
+aside {
+    flex: 15;
+    background: #6c7cb7;
+    text-align: center;
+}

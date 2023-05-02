@@ -1,0 +1,875 @@
+--------------------------------------------------------
+--  File created - vasárnap-április-30-2023   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table ALLASKERESO
+--------------------------------------------------------
+
+  CREATE TABLE  "ALLASKERESO" 
+   (	"FELHID" NUMBER(*,0), 
+	"NEV" VARCHAR2(20 BYTE), 
+	"NEM" VARCHAR2(10 BYTE), 
+	"SZULIDO" DATE
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ALLAS
+--------------------------------------------------------
+
+  CREATE TABLE  "ALLAS" 
+   (	"ALLASID" NUMBER(*,0), 
+	"ALLASNEV" VARCHAR2(50 BYTE), 
+	"LEIRAS" LONG, 
+	"MUNKAIDO" VARCHAR2(20 BYTE), 
+	"FIZETES" FLOAT(126), 
+	"HELY" VARCHAR2(50 BYTE), 
+	"ELVART_MUNKATAPASZTALAT_EV" NUMBER(*,0), 
+	"MEGHIRDET_ID" NUMBER(*,0), 
+	"TIPUSID" VARCHAR2(5 BYTE), 
+	"MEGHIRDET_IDO" DATE, 
+	"MUNKARENDID" VARCHAR2(5 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table BELEPESEK
+--------------------------------------------------------
+
+  CREATE TABLE  "BELEPESEK" 
+   (	"FELHID" NUMBER, 
+	"BELEPETT_MAR" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ELETRAJZ
+--------------------------------------------------------
+
+  CREATE TABLE  "ELETRAJZ" 
+   (	"CVID" NUMBER(*,0), 
+	"NYELV" VARCHAR2(20 BYTE), 
+	"FELHID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table FELHASZNALO
+--------------------------------------------------------
+
+  CREATE TABLE  "FELHASZNALO" 
+   (	"FELHNEV" VARCHAR2(20 BYTE), 
+	"EMAIL" VARCHAR2(100 BYTE), 
+	"JELSZO" VARCHAR2(1000 BYTE), 
+	"TELSZ" VARCHAR2(15 BYTE), 
+	"UTOLSOBELEPIDO" DATE, 
+	"TARTOZKHELY" VARCHAR2(20 BYTE), 
+	"CEG_E" NUMBER, 
+	"FELHID" NUMBER
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table JELENTKEZIK
+--------------------------------------------------------
+
+  CREATE TABLE  "JELENTKEZIK" 
+   (	"JELENTKEZESIDO" DATE, 
+	"FELHID" NUMBER(38,0), 
+	"ALLASID" NUMBER(38,0), 
+	"MUNKAKORNY" NUMBER(1,0), 
+	"TAVOLSAG" NUMBER(1,0), 
+	"BEREZES" NUMBER(1,0), 
+	"ALLASERTEKIDO" DATE
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MESSAGES
+--------------------------------------------------------
+
+  CREATE TABLE  "MESSAGES" 
+   (	"FELHNEV" VARCHAR2(50 BYTE), 
+	"MESSAGE" VARCHAR2(50 BYTE), 
+	"DATUM" DATE
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MUNKALTATO
+--------------------------------------------------------
+
+  CREATE TABLE  "MUNKALTATO" 
+   (	"MUNKALTATONEV" VARCHAR2(50 BYTE), 
+	"DOLGOZOKSZAMA" NUMBER(*,0), 
+	"FELHID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MUNKAREND
+--------------------------------------------------------
+
+  CREATE TABLE  "MUNKAREND" 
+   (	"MUNKARENDID" VARCHAR2(5 BYTE), 
+	"MUNKARENDNEV" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table SZAKMA
+--------------------------------------------------------
+
+  CREATE TABLE  "SZAKMA" 
+   (	"SZAKMAID" VARCHAR2(20 BYTE), 
+	"SZAKMANEV" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table SZAKMAJA
+--------------------------------------------------------
+
+  CREATE TABLE  "SZAKMAJA" 
+   (	"SZAKMAID" VARCHAR2(20 BYTE), 
+	"FELHID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TIPUS
+--------------------------------------------------------
+
+  CREATE TABLE  "TIPUS" 
+   (	"TIPUSID" VARCHAR2(5 BYTE), 
+	"TIPUSNEV" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into  ALLASKERESO
+SET DEFINE OFF;
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('9','Tóth Katalin','Nő',to_date('95-SZEPT.-21','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('2','Tóth Bence','Férfi',to_date('90-DEC.  -13','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('8','Virág Jázmin','Nő',to_date('95-AUG.  -12','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('10','Szilágyi Miklós','Férfi',to_date('89-NOV.  -11','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('11','Csanád Sándor','Férfi',to_date('02-ÁPR.  -30','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('12','Szabó Balázs','Férfi',to_date('80-JÚL.  -02','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('13','Németh zoltán','Férfi',to_date('70-FEBR. -28','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('14','Balogh Botond','Férfi',to_date('99-OKT.  -14','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('15','Kocsis Ramóna','Nő',to_date('93-JÚL.  -20','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('35','Király Rudolf','Férfi',to_date('01-JAN.  -01','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('37','Kiss Valéria','Nő',to_date('98-FEBR. -28','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('38','Novák Evelin','Nő',to_date('00-SZEPT.-10','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('40','Jakab Boróka','Nő',to_date('02-ÁPR.  -10','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('3','Kiss jános','Férfi',to_date('60-JÚN.  -17','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('4','Kovács-Bodó Csenge','Nő',to_date('01-MÁJ.  -04','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('5','Kalmár Krisztián','Férfi',to_date('99-MÁRC. -09','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('6','Cili Viktor','Férfi',to_date('99-JAN.  -04','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('7','Nagy Sándor','Férfi',to_date('00-MÁRC. -11','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('31','Molnár Ernő','Férfi',to_date('88-DEC.  -01','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('32','János Máté','Férfi',to_date('00-ÁPR.  -01','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('33','Vass Adél','Nő',to_date('03-MÁJ.  -06','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('34','Antal Barna','Férfi',to_date('90-AUG.  -20','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('36','Nagy Milla','Nő',to_date('70-ÁPR.  -18','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('39','Molnár Anikó','Nő',to_date('80-JÚN.  -30','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('55','Olasz Csaba','Férfi',to_date('00-ÁPR.  -01','RR-MON-DD'));
+Insert into  ALLASKERESO (FELHID,NEV,NEM,SZULIDO) values ('1','Kollár Laura','Nő',to_date('02-JÚL.  -18','RR-MON-DD'));
+REM INSERTING into  ALLAS
+SET DEFINE OFF;
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('10','Könyvelő','Megbízható, precíz könyvelőt keresünk.','H-P 8-16','400000','Kecskemét','2','21','gt',to_date('23-FEBR. -02','RR-MON-DD'),'vm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('12','Gyógytornász ','Tapasztalt gyógytornász állás kiemelkedő bérrel.','H-P 8-16','250000','Budapest','1','43','et',to_date('22-MÁRC. -27','RR-MON-DD'),'rm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('11','Általános iskolai történelem tanár','Jelentkezz hozzánk Magyarország egyetelen iskolájába, ahol magas bérel jutalmazzunk tanárainkat','H-P 8-16','3000000','Gödöllő','0','25','ot',to_date('22-NOV.  -09','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('13','Medior PHP fejlesztő','Medior PHP fejlesztőt keresünk családias cégünkbe. Jelentkezz, ha alkalmasnak találod magad.','H-P 8-16','1000000','Győr','5','23','it',to_date('22-JAN.  -05','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('14','Alkalmi takarítás építkezésen','Kiváló jövedelemkiegészítés. Nem bánod meg.','H-P 8-16','100000','Debrecen','0','51','tt',to_date('23-JAN.  -30','RR-MON-DD'),'am');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('15','Teljes munkaidős takarító','Teljes munkaidős takarítót keresnk intézményünkbe.','H-P 8-16','200000','Esztergom','0','45','tt',to_date('23-JAN.  -13','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('16','Komissiózás raktárunkban','Jelentkezz hozzánk, ha szenvedélyed a csomagolás.','H-P 8-16','200000','Hódmezővásárhely','0','42','lt',to_date('23-FEBR. -23','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('17','Logisztikai ügyintéző','Megbízható, precíz ügyintézőt keresünk.','H-P 8-16','300000','Budapest','1','17','lt',to_date('22-JAN.  -25','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('18','Rendőr őrtiszt','Hosszútávra keressük új kollégánkat.','H-P 8-16','400000','Budapest','4','44','kt',to_date('23-MÁRC. -31','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('19','Iskolaigazgató','Leendő vezeőnket keressük.','H-P 8-16','1000000','Gödöllő','10','25','kt',to_date('22-DEC.  -27','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('20','Építőipari segédmunkás','Kiváló jövedelemkiegészítés. Nem bánod meg.','H-P 8-16','200000','Debrecen','0','51','ft',to_date('22-AUG.  -24','RR-MON-DD'),'am');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('21','Árumozgató','Kiváló jövedelemkiegészítés. Nem bánod meg.','H-P 8-16','200000','Esztergom','0','45','ft',to_date('22-DEC.  -06','RR-MON-DD'),'rm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('22','Gazdasági adatelemző','Jelentkezz hozzánk! Mi kínáljuk a legmenőbb állást.','H-P 8-16','300000','Szeged','3','46','gt',to_date('23-JAN.  -30','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('23','Számviteli ügyintéző','Megbízható, precíz ügyintézőt keresünk.','H-P 8-16','300000','Inarcs','1','27','gt',to_date('23-MÁRC. -22','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('24','Egyetemi oktató tanulást segítő kurzushoz','Magas jövedlemet biztosítunk, miközben lehetőséged nyílik másokat motiválni.','H-P 8-16','1000000','Szolnok','1','24','ot',to_date('23-JAN.  -01','RR-MON-DD'),'rm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('25','Kiscsoportos foglakkzás specialista','Szeretsz emberekkel együtt dolgozni? Itt a helyed.','H-P 8-16','500000','Gödöllő','2','25','ot',to_date('22-JÚL.  -31','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('26','Személyi edző','Motiválj másokat, segíts vendégeink célainak elérésében.','H-P 8-16','300000','Baja','4','22','st',to_date('23-JAN.  -01','RR-MON-DD'),'vm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('27','Jógaoktató','Teremts velünk vendégeink lelkében békét.','H-P 8-16','500000','Zalaegerszeg','2','30','st',to_date('23-ÁPR.  -06','RR-MON-DD'),'rm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('28','Biztosítási kárszakértő','Újonnan induló biztosítási szolgáltatásunkhoz keresünk szakértőt.','H-P 8-16','600000','Szolnok','6','24','jt',to_date('23-JAN.  -29','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('29','Jogászsegéd','Bírósági tárgyalásokra keresübk tapasztalt jogászt.','H-P 8-16','600000','Szeged','1','26','jt',to_date('23-JAN.  -14','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('30','Pincér','Vidám személyiség vagy? Szereted a pörgést? Jelentkezz most!','H-P 8-16','300000','Zalakaros','2','49','vt',to_date('23-JAN.  -01','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('1','Junior java fejlesztő','Junior java fejlesztőt keresünk családias cégünkbe. Jelentkezz, ha alkalmasnak találod magad.','H-P 8-16','600000','Győr','1','16','it',to_date('23-ÁPR.  -04','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('2','Swift fejlesztő','Swift fejlesztőt keresünk családias cégünkbe. Jelentkezz, ha alkalmasnak találod magad.','H-P 8-16','600000','Budapest','2','28','it',to_date('23-FEBR. -10','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('3','Seinor C# fejlesztő','Senior C# fejlesztőt keresünk családias cégünkbe. Jelentkezz, ha alkalmasnak találod magad.','H-P 8-16','2000000','Győr','5','23','it',to_date('22-ÁPR.  -06','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('4','PHP fejlesztő gyakornok','PHP fejlesztő gyakornokot keresünk családias cégünkbe. Jelentkezz, ha alkalmasnak találod magad.','H-P 8-16','180000','Győr','0','16','it',to_date('23-JAN.  -10','RR-MON-DD'),'rm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('5','Ortopéd szakorvos','Tapasztalt Ortopéd orvosi állás kiemelkedő bérrel.','H-P 8-16','1000000','Szombathely','2','29','et',to_date('23-ÁPR.  -09','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('6','Szülésznő','Tapasztalt szülésznő állás kiemelkedő bérrel.','H-P 8-16','700000','Budapest','1','43','et',to_date('23-FEBR. -15','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('7','Mérnököt keresünk','Jelentkezz hozzánk, ha érdekel a drónok világa.','H-P 8-16','500000','Budapest','3','19','mt',to_date('23-FEBR. -10','RR-MON-DD'),'tm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('8','Villamosmérnököt keresünk','Jelentkezz hozzánk, ha érdekel a drónok világa.','H-P 8-16','900000','Budapest','5','19','mt',to_date('23-JAN.  -16','RR-MON-DD'),'vm');
+Insert into  ALLAS (ALLASID,ALLASNEV,LEIRAS,MUNKAIDO,FIZETES,HELY,ELVART_MUNKATAPASZTALAT_EV,MEGHIRDET_ID,TIPUSID,MEGHIRDET_IDO,MUNKARENDID) values ('9','Pultos keresünk népszerű éttermünkbe','Vidám személyiség vagy? Szereted a pörgést? Jelentkezz most!','H-P 8-16','250000','Pécs','0','18','vt',to_date('23-FEBR. -24','RR-MON-DD'),'tm');
+REM INSERTING into  BELEPESEK
+SET DEFINE OFF;
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('1','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('2','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('3','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('4','Már belépett');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('5','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('6','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('7','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('8','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('9','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('10','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('11','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('12','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('13','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('14','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('15','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('16','Már belépett');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('17','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('18','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('19','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('20','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('21','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('22','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('23','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('24','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('25','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('26','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('27','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('28','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('29','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('30','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('31','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('32','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('33','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('34','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('35','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('36','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('37','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('38','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('39','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('40','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('41','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('42','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('43','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('44','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('45','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('46','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('47','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('48','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('49','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('50','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('55','Még nem');
+Insert into  BELEPESEK (FELHID,BELEPETT_MAR) values ('57','Még nem');
+REM INSERTING into  ELETRAJZ
+SET DEFINE OFF;
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('8','angol','5');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('2','angol','4');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('4','magyar','1');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('9','német','5');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('25','magyar','35');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('6','német','1');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('7','magyar','5');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('13','magyar','15');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('14','angol','15');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('15','német','15');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('16','magyar','6');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('18','német','6');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('21','német','10');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('22','magyar','2');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('26','angol','35');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('27','német','35');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('28','magyar','14');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('29','angol','14');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('30','német','14');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('5','angol','1');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('1','magyar','4');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('17','angol','6');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('3','német','4');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('10','magyar','55');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('12','német','55');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('11','angol','55');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('19','magyar','10');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('20','angol','10');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('23','angol','2');
+Insert into  ELETRAJZ (CVID,NYELV,FELHID) values ('24','német','2');
+REM INSERTING into  FELHASZNALO
+SET DEFINE OFF;
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('szilimiki','szilimiki@gmail.com','$2y$10$qWr5dTDTIiQ2R2dg8uumNekT0TJG83pODFs22HQ6ymPxPIjSpZoNi','06201593578',to_date('23-ÁPR.  -30','RR-MON-DD'),'Miskolc','0','10');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('viragjazi','viragjazi@gmail.com','$2y$10$ARoqFHVelHn2HzxNAUbZ6OKRv4FeBMEdJOzVBRRgfrPmblWFmlS3q','06307531590',to_date('22-ÁPR.  -02','RR-MON-DD'),'Budapest','0','8');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('tothkati','nemethz@gmail.com','$2y$10$bGzbxNqppR7S/Rzj0uR4ueuQM29CgJe3shC4OxeZyLhBGnghowFxO','06201478937',to_date('23-ÁPR.  -28','RR-MON-DD'),'Győr','0','9');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('chadsanyi','chadsanyi@gmail.com','$2y$10$cVxnXw58T/qgvr9PQe.Riupcx3fh0Ai7Rq6KimVklBiRLqGqqHsha','06301473695',to_date('21-ÁPR.  -04','RR-MON-DD'),'Békéscsaba','0','11');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('szutyi','szutiy@gmail.com','$2y$10$SsQFFn.WGshSOMCY5uD5F./ga2lvQw0W6wlDsNP/RvWvugwIxbHR2','06301111111',to_date('23-ÁPR.  -15','RR-MON-DD'),'Székesfehérvár','0','12');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('nemethzoli','nemethz@gmail.com','$2y$10$tkg.cFFDQ/MdHSxPs/8oFu9vmaWJhY0W66ZaGOsnDRH7cRm6sE5pG','06702536148',to_date('21-ÁPR.  -07','RR-MON-DD'),'Budapest','0','13');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('babo','babo@gmail.com','$2y$10$SrIyQW65hJ1yCwj69xPjJOAAt6/vGn464lpjaKLfgTxAG7Sgextne','06207865120',to_date('23-ÁPR.  -30','RR-MON-DD'),'Kecskemét','0','14');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('kocsisrami','kocsisrami@gmail.com','$2y$10$lOA5eCE3oiON2NJjopSZwObYDKd2We5BxoJBDcG1iyDvS5iEVPQNe','06702839175',to_date('23-ÁPR.  -30','RR-MON-DD'),'Szeged','0','15');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('zsomle','info@zsomle.hu','$2y$10$asVQCsBHJXTiCfdFaeKA8.0kFrKxq9iNjHIIojUHmUragtfbiKaJu','06302112212',null,'Nyíregyháza','1','20');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('nagymilla','nagymilla@gmail.com','$2y$10$YXqUrihVwHIuyoUsGC8b5u4653OyIiz3FE254KtPYuEPmir5PNy8W','06703770204',null,'Pákozd','0','36');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('novake','nobake@gmail.com','$2y$10$bBzqT0FNkAmgVMQ25EUJkuUt.hNql2dN1tCPA9YVKiXz6OdM7JkBm','06206133668',null,'Karcag','0','38');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('jakabb','jakabb@gmail.com','$2y$10$cAqpW0wdhXQu2fWo0hbNceCphQ.FTIj628OIQWwdhaUUIoTj4nN7m','06202532745',null,'Székesfehérvár','0','40');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('csirkes','info@csirkes.hu','$2y$10$wSXKLLJ59OhJUmzW56HZter3MiJ06xM2EzFrC2RX4RSJkORz3W9jS','06709998979',null,'Kazincbarcika','1','47');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('luxihotel','info@luxhotel.hu','$2y$10$Vhqow47AJaLeiTa/rBY4dutclgYhzYDgSw3HMOjOVNtwWyk.xVKj.','06303015347',to_date('23-ÁPR.  -29','RR-MON-DD'),'Zalakaros','1','49');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('hairglow','info@hairglow.hu','$2y$10$NT3vt2.KPTaZcGqbqGQ0auxw9xHwUrPETSUP5XKsf6Vre3BBp8oxK','06700405454',to_date('23-ÁPR.  -29','RR-MON-DD'),'Salgótarján','1','50');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('tesco','info@tesco.hu','$2y$10$Ie/XcrgUtwY8k1TocARjWuKhQ765a2XuHz.8kinRqcW4VZeJ4q9nC','06309569569',to_date('23-ÁPR.  -30','RR-MON-DD'),'Esztergom','1','45');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('robotbird','info@robotbird.hu','$2y$10$X7HzYcgAPAUHbNTFhftS6e1SeF7HsrnSuPiq/qg07a03HVka5Z8n.','06709896954',null,'Budapest','1','19');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('brfk','info@brfk.hu','$2y$10$U4eo3.S7vlBXT0bb6Ilyy.0dkcafwBtywoDezSsySgcLlcvjXeVcm','06205050504',null,'Budapest','1','44');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('kbcsenge','kbcsenge@gmail.com','$2y$10$8d0gB.rkCmKP2Z1cE4Oae./1cRVgwrp0V8Fgaw4tRai0iPYqp5mQC','06308787121',to_date('23-ÁPR.  -30','RR-MON-DD'),'Szeged','0','4');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('kkrisztian','kkrisztian@gmail.com','$2y$10$zdAPuZMzs/MCxe1jOi6yvOTbzgvjiC23ELnEnsgqdqRfyPfnFYUAu','06302541236',to_date('23-ÁPR.  -30','RR-MON-DD'),'Szeged','0','5');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('ciliviki','ciliviki@gmail.com','$2y$10$b4u9d5w7XHsI/bInYVW4bO5s.eXAdUHfJ1sChrZVKq4coI.6roOlS','06707896541',to_date('23-ÁPR.  -30','RR-MON-DD'),'Sopron','0','6');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('sanyithegreat','sanyithegreat@gmail.com','$2y$10$tbMo74.q7p8qqCdyBEJsnuHAmsIEIvahpQb2vNvj8EOdw/2TIaZDi','06203698521',to_date('23-ÁPR.  -30','RR-MON-DD'),'Eger','0','7');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('profitom','info@profitom.hu','$2y$10$cW/V2uyUijsXdFDIWzyqLea5r7ZUn7HNU9KHSNAPKBtw/pzK83f26','06208525456',null,'Kecskemét','1','21');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('gyuras','info@gyuras.hu','$2y$10$WwYnlAnZyYjOuZgF2Je0d.4vQtxP6C86INAMCneXR6.r.9/Qaxbuu','06301119944',null,'Baja','1','22');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('pcwizards','info@pcwizards.hu','$2y$10$0DNezk54v7HE.mQlFw.o9OqHoThbpXnTLeUZeX.NgarszKwK4Ys52','06303030301',null,'Győr','1','23');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('kamat','info@kamat.hu','$2y$10$JiT3cnrW613YFVZ8DU2cqOo5OOAe3cOnUQ6uYuQuFV/CQh.6pEiTi','06208486813',null,'Szolnok','1','24');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('sulibuli','info@sulibuli.hu','$2y$10$RY3ZG301EN0GgacKap4ngePGpzz1ig7fPOJ6w6Ur/z2EA9wv8Cpcy','06301445566',null,'Gödöllő','1','25');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('molnare','molnare@gmail.com','$2y$10$RL/DK1gm54Et1aV9xVyc5OXkMHPc5QUGVCgnwYoTDQe1YWMRTOzNK','06701534759',null,'Szentendre','0','31');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('janimate','janimate@gmail.com','$2y$10$OtltaH5NlS2jnXkOQ54AEuVYqfjQ6zGuikyHi4Ut/IUHzjYMkUsY.','06702222222',null,'Orosháza','0','32');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('vassadel','vassadel@gmail.com','$2y$10$FzWpMeyeWLGrs7jcY69RlOQA51t/kbSXgbUpU6HCPGSI6i9.8V6QC','06704455661',null,'Paks','0','33');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('antibarni','antibarni@gmail.com','$2y$10$FJgOQR6YdiUT3MS8./JgrOKxXJax8yWmwgBDZjZ0julSTGXmSgCUe','06203216547',null,'Kiskunfélegyháza','0','34');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('kiraly','kiraly@gmail.com','$2y$10$pYgZX5TyAdhbGaH3r2u8.eG2ySrZN3XERlakxozlmFHfj04GS6wwO','06306464521',to_date('23-ÁPR.  -30','RR-MON-DD'),'Budapest','0','35');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('kissvali','kissvali@gmail.com','$2y$10$U4PSedSzPlZIITbYG3M3IOANr9E4mEXxQhV1ILJ8oMN6Ot.qa6GAi','06708076840',null,'Szeged','0','37');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('molnara','molnara@gmail.comasd','$2y$10$nZMPTP5rEkpPnoD9/pjgruZriWwsmFSpM0gld5mbUc0EmaLJd9fcq','06708362677',null,'Üllés','0','39');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('konyves','info@konyves.hu','$2y$10$sck08z2FZPDwC9Yb1HoZdeKax4ac1ZY6qqfkOIEFfPVunW7yr2lBa','06200102035',null,'Hódmezővásárhely','1','42');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('bpsztk','info@bpsztk.hu','$2y$10$zj4wiIBBoUiX1SmK7OHm1OLbmjYrRRGB0KYF/8IWYnt/fLwczNlMu','06700708090',null,'Budapest','1','43');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('finom','info@finom.hu','$2y$10$PnDjUZeulYmKq3svVt28A.NOP.1MJUD18aURZJwqYo8obfI0jSpwG','06705451523',null,'Mezőkövesd','1','48');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('bigbau','info@bigbau.hu','$2y$10$4Cr7O7G8Og498Tl8H.6LVOH87AK0.fSqxVjOtaiDD/4cd7QiRyGVC','06706480540',null,'Debrecen','1','51');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('csabesz','csabesz@email.com','$2y$10$kpKo9ArsPxZZYu0QSAp9GeizKLypOCmJgr5s6NjuUlkPGRU1m7b3a','145214521',to_date('23-ÁPR.  -30','RR-MON-DD'),'Szeged','0','55');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('klaura','klaura@gmail.com','$2y$10$bUjj4IVG1q47wRShjNq/iOotX/pRRu6lRpuWVvri.VziAbLSYj0OK','06301319199',to_date('23-ÁPR.  -30','RR-MON-DD'),'Szeged','0','1');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('tothbence','tothbence@gmail.com','$2y$10$ru.8BBGlSSZQUP4mvlxyhuJSyVkMGdoevn0VJODibUAFFly57ZFcK','06203696107',to_date('23-ÁPR.  -30','RR-MON-DD'),'Veszprém','0','2');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('megait','info@megait.hu','$2y$10$vNSrsBk7vL/VSy085mzj4.hbpWlLXF0FEV.UTA38CdoIbs7v.ndHG','06307319456',to_date('23-ÁPR.  -30','RR-MON-DD'),'Szeged','1','16');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('bababutik','info@bababutik.hu','$2y$10$MOUg5pPQdF.WGJwNqKDgrueQLhOOsONM/NA9fnyimEQKzar7xaGJe','06703164970',null,'Budapest','1','17');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('szte','info@szte.hu','$2y$10$/KL.aLaJQQyZRXwN/2L0TOVPCOmSy9dRYfk.ZTWvrxKAguHV7dh5u','06308888888',null,'Szeged','1','46');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('cicamica','info@cicamica.hu','$2y$10$n0AsKL5dXP4e62LUiC/v8OtTFF0Hnzu.trnAF5M2UhQM/8/cJa4G6','06700000000',null,'Pécs','1','18');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('birosagszeged','info@birosagszeged.hu','$2y$10$ZYihlOaWl/98vwZjdKzlGOzyrTvWl4xGbicr7.4lrjY6ot/urvm3.','06201234567',null,'Szeged','1','26');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('mindencsipos','info@mindencsipos.hu','$2y$10$MG/cjWO869hQa8FghwCe5.YNFxaF9CAQ7mjUzexVFI6Vwu4DU/rXa','06306666666',null,'Inárcs','1','27');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('applegeny','info@applegeny.hu','$2y$10$S8ljbv4t2WoH9zw67rCchOMWfSH4AF43jDoqA1jeE8uEHY9RkZ8Ga','06307786965',null,'Budapest','1','28');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('alma','info@alma.hu','$2y$10$OQ0oKMuMg0f/CvEDNzPn1OuQwWCuvWwV8oWvM.3lpDF5bOpWJH782','06201112131',null,'Szombathely','1','29');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('csikohal','info@csikohal.hu','$2y$10$q/QXTrNzH1R88vjM/IXfq.AcGNvH21wPEADawkMJHoZj398fEFX5K','06309988556',null,'Zalaegerszeg','1','30');
+Insert into  FELHASZNALO (FELHNEV,EMAIL,JELSZO,TELSZ,UTOLSOBELEPIDO,TARTOZKHELY,CEG_E,FELHID) values ('kissjancsi','kissjancsi@gmail.com','$2y$10$VkD2Lu6d1.YFXMVM21TyWe2iOl7e61YnjHfHDJZTuEFfxcrqdViNO','06701331818',null,'Budapest','0','3');
+REM INSERTING into  JELENTKEZIK
+SET DEFINE OFF;
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'4','18','1','2','3',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'4','23','4','5','4',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'4','6','3','2','1',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'4','5','1','1','1',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'4','27','2','2','2',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'4','24','3','3','3',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'6','17','4','4','4',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'6','10','5','5','5',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'12','11','1','2','3',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'32','14','2','3','4',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'32','21','4','5','4',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'14','23','5','4','3',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'55','30','1','2','1',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'55','11','2','3','2',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'1','1','3','4','3',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'1','2','4','5','4',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'1','3','5','4','5',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'13','19','4','3','4',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'13','4','3','2','3',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'36','20','2','1','2',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'36','2','3','2','1',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'35','29','4','3','2',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'35','28','5','4','3',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'32','27','1','1','1',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'32','5','2','2','2',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'5','11','3','3','3',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'5','12','4','4','4',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'5','13','5','5','5',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  JELENTKEZIK (JELENTKEZESIDO,FELHID,ALLASID,MUNKAKORNY,TAVOLSAG,BEREZES,ALLASERTEKIDO) values (to_date('23-ÁPR.  -30','RR-MON-DD'),'5','14','5','4','3',to_date('23-ÁPR.  -30','RR-MON-DD'));
+REM INSERTING into  MESSAGES
+SET DEFINE OFF;
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('asdasdasd','Üdvözöljük, asdasdasd!',to_date('23-ÁPR.  -29','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('lecives','Üdvözöljük, lecives!',to_date('23-ÁPR.  -29','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('ollolol','Üdvözöljük, ollolol!',to_date('23-ÁPR.  -29','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('vki','Üdvözöljük, vki!',to_date('23-ÁPR.  -29','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('lecci','Üdvözöljük, lecci!',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('teszt','Üdvözöljük, teszt!',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('xdddd','Üdvözöljük, xdddd!',to_date('23-ÁPR.  -29','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('test','Üdvözöljük, test!',to_date('23-ÁPR.  -29','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('probaceg','Üdvözöljük, probaceg!',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('proba','Üdvözöljük, proba!',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('asdfghj','Üdvözöljük, asdfghj!',to_date('23-ÁPR.  -29','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('qwertz','Üdvözöljük, qwertz!',to_date('23-ÁPR.  -29','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('mnbv','Üdvözöljük, mnbv!',to_date('23-ÁPR.  -29','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('teszt','Üdvözöljük, teszt!',to_date('23-ÁPR.  -29','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('probaember','Üdvözöljük, probaember!',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('proba','Üdvözöljük, proba!',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('qaywsx','Üdvözöljük, qaywsx!',to_date('23-ÁPR.  -29','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('ééééiii','Üdvözöljük, ééééiii!',to_date('23-ÁPR.  -29','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('proba','Üdvözöljük, proba!',to_date('23-ÁPR.  -30','RR-MON-DD'));
+Insert into  MESSAGES (FELHNEV,MESSAGE,DATUM) values ('teszt','Üdvözöljük, teszt!',to_date('23-ÁPR.  -30','RR-MON-DD'));
+REM INSERTING into  MUNKALTATO
+SET DEFINE OFF;
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Zsömle pékség','20','20');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Kazincbarcikai Baromfi feldolgozó Kft.','150','47');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Finomság büfé Kft.','20','48');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Luxi Hotel Zalakaros*****','200','49');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Hairglow szalon Ktf.','15','50');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Robotmadár Kft.','500','19');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Könyves kincsesláda Kft.','20','42');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Budapesti szakrendelők','8000','43');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Budapesti Rendőr Főkapitányság','3000','44');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('TESCO Esztergom','2000','45');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Profitom Zrt.','2000','21');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Gyúróműhely Kft.','100','22');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('PC Wizards Kft.','20','23');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Kamatoskamat Kft.','5000','24');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Sulibuli Általános Iskola','80','25');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Minden csípős étterem','60','27');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Big Bau Kft.','50','51');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('MegaIT Kft.','30','16');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Szegedi Tudomáynegyetem','9000','46');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Szegedi Bíróság','50','26');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('App-legények Kft.','100','28');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Alma magánkórház','300','29');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Csikóhal uszoda','200','30');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Bababutik Kft.','100','17');
+Insert into  MUNKALTATO (MUNKALTATONEV,DOLGOZOKSZAMA,FELHID) values ('Cicamica Café Kft.','20','18');
+REM INSERTING into  MUNKAREND
+SET DEFINE OFF;
+Insert into  MUNKAREND (MUNKARENDID,MUNKARENDNEV) values ('tm','teljes munkaidő');
+Insert into  MUNKAREND (MUNKARENDID,MUNKARENDNEV) values ('rm','részmunkaidő');
+Insert into  MUNKAREND (MUNKARENDID,MUNKARENDNEV) values ('am','alkalmi munka');
+Insert into  MUNKAREND (MUNKARENDID,MUNKARENDNEV) values ('vm','vállalkozói');
+REM INSERTING into  SZAKMA
+SET DEFINE OFF;
+Insert into  SZAKMA (SZAKMAID,SZAKMANEV) values ('isz','informatikus');
+Insert into  SZAKMA (SZAKMAID,SZAKMANEV) values ('szsz','szakács');
+Insert into  SZAKMA (SZAKMAID,SZAKMANEV) values ('ksz','közgazdász');
+Insert into  SZAKMA (SZAKMAID,SZAKMANEV) values ('jsz','jogász');
+Insert into  SZAKMA (SZAKMAID,SZAKMANEV) values ('esz','személyi edző');
+Insert into  SZAKMA (SZAKMAID,SZAKMANEV) values ('msz','mérnök');
+Insert into  SZAKMA (SZAKMAID,SZAKMANEV) values ('rsz','rendőr');
+Insert into  SZAKMA (SZAKMAID,SZAKMANEV) values ('tsz','tanár');
+Insert into  SZAKMA (SZAKMAID,SZAKMANEV) values ('osz','szakorvos');
+Insert into  SZAKMA (SZAKMAID,SZAKMANEV) values ('gysz','gyógyszerész');
+Insert into  SZAKMA (SZAKMAID,SZAKMANEV) values ('vsz','vegyész');
+Insert into  SZAKMA (SZAKMAID,SZAKMANEV) values ('psz','pincér');
+REM INSERTING into  SZAKMAJA
+SET DEFINE OFF;
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('esz','7');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('esz','33');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('gysz','5');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('isz','1');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('isz','2');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('isz','4');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('isz','38');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('isz','39');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('jsz','12');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('jsz','34');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('jsz','36');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('ksz','7');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('ksz','36');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('msz','1');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('msz','32');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('msz','38');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('osz','6');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('osz','9');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('osz','10');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('psz','3');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('psz','8');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('psz','13');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('rsz','31');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('rsz','35');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('szsz','11');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('szsz','37');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('szsz','39');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('tsz','7');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('tsz','15');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('vsz','14');
+Insert into  SZAKMAJA (SZAKMAID,FELHID) values ('vsz','40');
+REM INSERTING into  TIPUS
+SET DEFINE OFF;
+Insert into  TIPUS (TIPUSID,TIPUSNEV) values ('it','informatika');
+Insert into  TIPUS (TIPUSID,TIPUSNEV) values ('et','egészségügy');
+Insert into  TIPUS (TIPUSID,TIPUSNEV) values ('mt','műszaki');
+Insert into  TIPUS (TIPUSID,TIPUSNEV) values ('vt','vendéglátás');
+Insert into  TIPUS (TIPUSID,TIPUSNEV) values ('jt','jogi');
+Insert into  TIPUS (TIPUSID,TIPUSNEV) values ('st','sport');
+Insert into  TIPUS (TIPUSID,TIPUSNEV) values ('ot','oktatás');
+Insert into  TIPUS (TIPUSID,TIPUSNEV) values ('gt','gazdaság');
+Insert into  TIPUS (TIPUSID,TIPUSNEV) values ('ft','fizikai');
+Insert into  TIPUS (TIPUSID,TIPUSNEV) values ('kt','közigazgatás');
+Insert into  TIPUS (TIPUSID,TIPUSNEV) values ('lt','logisztika');
+Insert into  TIPUS (TIPUSID,TIPUSNEV) values ('tt','takarítás');
+--------------------------------------------------------
+--  DDL for Index ALLASKERESO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX  "ALLASKERESO_PK" ON  "ALLASKERESO" ("FELHID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index ALLAS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX  "ALLAS_PK" ON  "ALLAS" ("ALLASID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index ELETRAJZ_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX  "ELETRAJZ_PK" ON  "ELETRAJZ" ("CVID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index FELHASZNALO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX  "FELHASZNALO_PK" ON  "FELHASZNALO" ("FELHID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index MUNKALTATO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX  "MUNKALTATO_PK" ON  "MUNKALTATO" ("FELHID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index MUNKAREND_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX  "MUNKAREND_PK" ON  "MUNKAREND" ("MUNKARENDID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SZAKMA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX  "SZAKMA_PK" ON  "SZAKMA" ("SZAKMAID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SZAKMAJA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX  "SZAKMAJA_PK" ON  "SZAKMAJA" ("SZAKMAID", "FELHID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index TIPUS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX  "TIPUS_PK" ON  "TIPUS" ("TIPUSID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Trigger BELEPETT
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER  "BELEPETT" 
+after update of utolsobelepido on felhasznalo
+for each row
+begin
+update belepesek set belepett_mar='Már belépett' where felhid=:NEW.felhid;
+end;
+
+/
+ALTER TRIGGER  "BELEPETT" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger WELCOME
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER  "WELCOME" 
+AFTER INSERT ON FELHASZNALO
+FOR EACH ROW
+DECLARE
+    message VARCHAR2(50) := 'Üdvözöljük, ' || :NEW.FELHNEV || '!';
+BEGIN
+    INSERT INTO messages (FELHNEV, MESSAGE,  DATUM)
+    VALUES (:NEW.FELHNEV, message, SYSDATE);
+END;
+
+/
+ALTER TRIGGER  "WELCOME" ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ALLASKERESO
+--------------------------------------------------------
+
+  ALTER TABLE  "ALLASKERESO" ADD CONSTRAINT "ALLASKERESO_PK" PRIMARY KEY ("FELHID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE  "ALLASKERESO" MODIFY ("FELHID" NOT NULL ENABLE);
+  ALTER TABLE  "ALLASKERESO" MODIFY ("NEV" NOT NULL ENABLE);
+  ALTER TABLE  "ALLASKERESO" MODIFY ("SZULIDO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ALLAS
+--------------------------------------------------------
+
+  ALTER TABLE  "ALLAS" ADD CONSTRAINT "ALLAS_PK" PRIMARY KEY ("ALLASID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE  "ALLAS" MODIFY ("ALLASID" NOT NULL ENABLE);
+  ALTER TABLE  "ALLAS" MODIFY ("ALLASNEV" NOT NULL ENABLE);
+  ALTER TABLE  "ALLAS" MODIFY ("MEGHIRDET_ID" NOT NULL ENABLE);
+  ALTER TABLE  "ALLAS" MODIFY ("TIPUSID" NOT NULL ENABLE);
+  ALTER TABLE  "ALLAS" MODIFY ("MEGHIRDET_IDO" NOT NULL ENABLE);
+  ALTER TABLE  "ALLAS" MODIFY ("MUNKARENDID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table BELEPESEK
+--------------------------------------------------------
+
+  ALTER TABLE  "BELEPESEK" MODIFY ("FELHID" NOT NULL ENABLE);
+  ALTER TABLE  "BELEPESEK" MODIFY ("BELEPETT_MAR" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ELETRAJZ
+--------------------------------------------------------
+
+  ALTER TABLE  "ELETRAJZ" ADD CONSTRAINT "ELETRAJZ_PK" PRIMARY KEY ("CVID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE  "ELETRAJZ" MODIFY ("CVID" NOT NULL ENABLE);
+  ALTER TABLE  "ELETRAJZ" MODIFY ("NYELV" NOT NULL ENABLE);
+  ALTER TABLE  "ELETRAJZ" MODIFY ("FELHID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table FELHASZNALO
+--------------------------------------------------------
+
+  ALTER TABLE  "FELHASZNALO" ADD CONSTRAINT "FELHASZNALO_PK" PRIMARY KEY ("FELHID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE  "FELHASZNALO" MODIFY ("FELHNEV" NOT NULL ENABLE);
+  ALTER TABLE  "FELHASZNALO" MODIFY ("EMAIL" NOT NULL ENABLE);
+  ALTER TABLE  "FELHASZNALO" MODIFY ("JELSZO" NOT NULL ENABLE);
+  ALTER TABLE  "FELHASZNALO" MODIFY ("TELSZ" NOT NULL ENABLE);
+  ALTER TABLE  "FELHASZNALO" MODIFY ("TARTOZKHELY" NOT NULL ENABLE);
+  ALTER TABLE  "FELHASZNALO" MODIFY ("FELHID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table JELENTKEZIK
+--------------------------------------------------------
+
+  ALTER TABLE  "JELENTKEZIK" MODIFY ("JELENTKEZESIDO" NOT NULL ENABLE);
+  ALTER TABLE  "JELENTKEZIK" MODIFY ("FELHID" NOT NULL ENABLE);
+  ALTER TABLE  "JELENTKEZIK" MODIFY ("ALLASID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table MUNKALTATO
+--------------------------------------------------------
+
+  ALTER TABLE  "MUNKALTATO" ADD CONSTRAINT "MUNKALTATO_PK" PRIMARY KEY ("FELHID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE  "MUNKALTATO" MODIFY ("MUNKALTATONEV" NOT NULL ENABLE);
+  ALTER TABLE  "MUNKALTATO" MODIFY ("FELHID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table MUNKAREND
+--------------------------------------------------------
+
+  ALTER TABLE  "MUNKAREND" ADD CONSTRAINT "MUNKAREND_PK" PRIMARY KEY ("MUNKARENDID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE  "MUNKAREND" MODIFY ("MUNKARENDID" NOT NULL ENABLE);
+  ALTER TABLE  "MUNKAREND" MODIFY ("MUNKARENDNEV" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table SZAKMA
+--------------------------------------------------------
+
+  ALTER TABLE  "SZAKMA" MODIFY ("SZAKMAID" NOT NULL ENABLE);
+  ALTER TABLE  "SZAKMA" MODIFY ("SZAKMANEV" NOT NULL ENABLE);
+  ALTER TABLE  "SZAKMA" ADD CONSTRAINT "SZAKMA_PK" PRIMARY KEY ("SZAKMAID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table SZAKMAJA
+--------------------------------------------------------
+
+  ALTER TABLE  "SZAKMAJA" MODIFY ("SZAKMAID" NOT NULL ENABLE);
+  ALTER TABLE  "SZAKMAJA" MODIFY ("FELHID" NOT NULL ENABLE);
+  ALTER TABLE  "SZAKMAJA" ADD CONSTRAINT "SZAKMAJA_PK" PRIMARY KEY ("SZAKMAID", "FELHID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TIPUS
+--------------------------------------------------------
+
+  ALTER TABLE  "TIPUS" MODIFY ("TIPUSID" NOT NULL ENABLE);
+  ALTER TABLE  "TIPUS" MODIFY ("TIPUSNEV" NOT NULL ENABLE);
+  ALTER TABLE  "TIPUS" ADD CONSTRAINT "TIPUS_PK" PRIMARY KEY ("TIPUSID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ALLASKERESO
+--------------------------------------------------------
+
+  ALTER TABLE  "ALLASKERESO" ADD CONSTRAINT "FELH" FOREIGN KEY ("FELHID")
+	  REFERENCES  "FELHASZNALO" ("FELHID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ALLAS
+--------------------------------------------------------
+
+  ALTER TABLE  "ALLAS" ADD CONSTRAINT "HIRDET" FOREIGN KEY ("MEGHIRDET_ID")
+	  REFERENCES  "MUNKALTATO" ("FELHID") ENABLE;
+  ALTER TABLE  "ALLAS" ADD CONSTRAINT "REND" FOREIGN KEY ("MUNKARENDID")
+	  REFERENCES  "MUNKAREND" ("MUNKARENDID") ENABLE;
+  ALTER TABLE  "ALLAS" ADD CONSTRAINT "TIPUSA" FOREIGN KEY ("TIPUSID")
+	  REFERENCES  "TIPUS" ("TIPUSID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ELETRAJZ
+--------------------------------------------------------
+
+  ALTER TABLE  "ELETRAJZ" ADD CONSTRAINT "ELETRAJZA" FOREIGN KEY ("FELHID")
+	  REFERENCES  "ALLASKERESO" ("FELHID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table JELENTKEZIK
+--------------------------------------------------------
+
+  ALTER TABLE  "JELENTKEZIK" ADD CONSTRAINT "KI" FOREIGN KEY ("FELHID")
+	  REFERENCES  "ALLASKERESO" ("FELHID") ENABLE;
+  ALTER TABLE  "JELENTKEZIK" ADD CONSTRAINT "MIRE" FOREIGN KEY ("ALLASID")
+	  REFERENCES  "ALLAS" ("ALLASID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table MUNKALTATO
+--------------------------------------------------------
+
+  ALTER TABLE  "MUNKALTATO" ADD CONSTRAINT "FELH1" FOREIGN KEY ("FELHID")
+	  REFERENCES  "FELHASZNALO" ("FELHID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table SZAKMAJA
+--------------------------------------------------------
+
+  ALTER TABLE  "SZAKMAJA" ADD CONSTRAINT "KINEK" FOREIGN KEY ("FELHID")
+	  REFERENCES  "ALLASKERESO" ("FELHID") ENABLE;
+  ALTER TABLE  "SZAKMAJA" ADD CONSTRAINT "SZAKMAJA" FOREIGN KEY ("SZAKMAID")
+	  REFERENCES  "SZAKMA" ("SZAKMAID") ENABLE;
+
+----------------------------------------------------------------------------------------------
+create or replace trigger belepett
+after update of utolsobelepido on felhasznalo
+for each row
+begin
+update belepesek set belepett_mar='Már belépett' where felhid=:NEW.felhid;
+end;
+--------------------------------------------------------------------------------------------------
+create or replace TRIGGER WELCOME
+AFTER INSERT ON FELHASZNALO
+FOR EACH ROW
+DECLARE
+    message VARCHAR2(50) := 'Üdvözöljük, ' || :NEW.FELHNEV || '!';
+BEGIN
+    INSERT INTO messages (FELHNEV, MESSAGE,  DATUM)
+    VALUES (:NEW.FELHNEV, message, SYSDATE);
+END;
+--------------------------------------------------------------------------------------------------------
+create or replace FUNCTION allasokszama(v_azonosito IN allas.meghirdet_id%type) 
+RETURN NUMBER IS v_num NUMBER;
+BEGIN
+     SELECT count(allasid) INTO v_num FROM allas WHERE meghirdet_id=v_azonosito;
+     RETURN v_num;
+END;
+-------------------------------------------------------------------------------------------------------
+create or replace FUNCTION jelentkezesekszama(v_azonosito IN jelentkezik.felhid%type) 
+RETURN NUMBER IS v_num NUMBER;
+BEGIN
+     SELECT count(allasid) INTO v_num FROM jelentkezik WHERE jelentkezik.felhid=v_azonosito;
+     RETURN v_num;
+END;
+----------------------------------------------------------------------------------------------------------
+create or replace PROCEDURE print_user_name(id IN NUMBER, result OUT VARCHAR2)
+AS
+BEGIN
+SELECT felhnev into result FROM felhasznalo WHERE felhid = id;
+DBMS_OUTPUT.PUT_LINE(result);
+END;
